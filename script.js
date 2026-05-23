@@ -4,7 +4,7 @@ let baseFontSize = 7;
 let fontSize = baseFontSize;
 
 function baseFunction(n, a = 0){
-  return Math.floor(10**10**n**1.229 + a).toLocaleString().replace(/,/g, " ");
+  return Math.floor(10**10**n**1.229 + a).toString().replace(/,/g, " ");
 }
 
 function preciseBaseFunction(n, a = 0){
