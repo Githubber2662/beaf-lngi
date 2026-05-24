@@ -19,7 +19,7 @@ function ban1(n){
   if (n < 1) return baseFunction(n);
   else {
     let i = 10 ** (n % 1) ** 1.229;
-    return (n < 2 ? "10<sup>" : "{10, ").repeat(Math.floor(i)) + ban1((i % 1) * (n % 1 == 0 ? n - 1 : Math.floor(n))) + (n < 2 ? "</sup>" : ", " + Math.floor(n) + "}").repeat(Math.floor(i));
+    return ("{10, ").repeat(Math.floor(i)) + ban1((i % 1) * (n % 1 == 0 ? n - 1 : Math.floor(n))) + (", " + Math.floor(n) + "}").repeat(Math.floor(i));
   }
 }
 
@@ -40,11 +40,12 @@ function getNum(){
 }
 
 function updateText(){
-  t = t + Math.log10(t + 1.001);
+  t = t + Math.log10(t + 1.01);
   
   let num = getNum().toString();
   
   document.getElementById("number").innerHTML = num;
+  document.getElementById("time").innerHTML = t.toString();
   fontSize = Math.min(baseFontSize, findFontSize());
   document.getElementById("number").style.fontSize = fontSize + "vw";
 }
