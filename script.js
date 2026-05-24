@@ -19,7 +19,7 @@ function ban1(n){
   if (n < 1) return baseFunction(n);
   else {
     let i = 10 ** (n % 1) ** 1.229;
-    return ("{10, ").repeat(Math.floor(i)) + ban1((i % 1) * (n % 1 == 0 ? n - 1 : Math.floor(n))) + (", " + Math.floor(n) + "}").repeat(Math.floor(i));
+    return ("{10, ").repeat(Math.floor(i)+1) + ban1((i % 1) * (n % 1 == 0 ? n - 1 : Math.floor(n))) + (", " + Math.floor(n) + "}").repeat(Math.floor(i)+1);
   }
 }
 
