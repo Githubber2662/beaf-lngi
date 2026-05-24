@@ -40,7 +40,7 @@ function getNum(){
 }
 
 function updateText(){
-  t++;
+  t = t + Math.log10(t + 1.001);
   
   let num = getNum().toString();
   
